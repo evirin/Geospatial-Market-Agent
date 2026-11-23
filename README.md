@@ -23,3 +23,19 @@ User Query
 │ • FAISS FlatIP      │   │ • Mean / Median / IQR      │
 │ • Cosine Similarity │   │ • Radius-based filtering   │
 └─────────────────────┘   └────────────────────────────┘
+
+## PROJECT STRUCTURE
+
+geospatial_market_agent/
+├── data/
+│   └── athens_listings_2025.csv   # 2,000 cleaned Athens 2025 listings
+├── src/
+│   ├── schemas.py                 # Pydantic input/output & observability models
+│   ├── embeddings_store.py        # Dense text embeddings & FAISS vector index
+│   ├── spatial_tools.py           # Deterministic Haversine & statistical engine
+│   └── agent.py                   # Tool-calling orchestration loop with trace logging
+├── tests/
+│   └── test_tools.py              # Automated unit tests (pytest)
+├── evaluate.py                    # End-to-end agent evaluation & latency benchmark
+└── requirements.txt
+
